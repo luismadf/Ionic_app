@@ -8,6 +8,8 @@ export class PhotosService {
   constructor(private http: HttpClient) {}
 
   getPhotos() {
-    this.http.get("https://jsonplaceholder.typicode.com/photos?_limit=15");
+    return this.http.get<any>(
+      "https://jsonplaceholder.typicode.com/photos?_limit=15"
+    );
   }
 }
