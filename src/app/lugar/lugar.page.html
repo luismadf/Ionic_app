@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lugares</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="places && places.length > 0; else noPlaces">
+    <ion-item *ngFor="let place of places" [routerLink]="['/lugar', place.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="place.imageURL"></ion-img>
+      </ion-avatar>
+      <ion-label> {{place.title}} </ion-label>
+    </ion-item>
+  </ion-list>
+  <ng-template #noPlaces>
+    <ion-text>
+      <p class="ion-text-center">No places yet.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>
