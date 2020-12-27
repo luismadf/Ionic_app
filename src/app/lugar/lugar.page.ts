@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PlacesService } from "./places.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-lugar",
@@ -8,7 +9,7 @@ import { PlacesService } from "./places.service";
 })
 export class LugarPage implements OnInit {
   places = [];
-  constructor(private placeService: PlacesService) {}
+  constructor(private placeService: PlacesService, private router: Router) {}
 
   ngOnInit() {
     this.places = this.placeService.getPlaces();
@@ -16,5 +17,14 @@ export class LugarPage implements OnInit {
 
   ionViewWillEnter() {
     this.places = this.placeService.getPlaces();
+  }
+
+  addNewPlace() {
+    this.router.navigate(["/new-place"]);
+  }
+
+  goToHome() {
+    console.log("work");
+    this.router.navigate(["/home"]);
   }
 }

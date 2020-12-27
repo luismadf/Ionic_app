@@ -30,7 +30,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: "place-add",
+    path: "new-place",
     loadChildren: () =>
       import("./lugar/place-add/place-add.module").then(
         (m) => m.PlaceAddPageModule

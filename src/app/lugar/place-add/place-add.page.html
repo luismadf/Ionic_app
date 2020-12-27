@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>place-add</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lugar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add a New Place</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-input type="text" placeholder="Title" #title></ion-input>
+          <ion-input type="text" placeholder="Image Url" #imageURL></ion-input>
+          <ion-button (click)="saveNewPlace(title, imageURL)">Send</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>
